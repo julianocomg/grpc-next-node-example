@@ -20,3 +20,8 @@ Access this endpoint on your web browser:
 ```
 http://localhost:3000
 ```
+
+If you want to re-generate the **gRPC classes**, just run the following command from the **client/** folder
+```
+yarn generate-grpc-classes
+```

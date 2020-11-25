@@ -1,4 +1,4 @@
-This is an example about how to use gRPC with NodeJS and NextJS
+This is an example of how to use gRPC with NodeJS and NextJS
 
 ## Getting Started
 

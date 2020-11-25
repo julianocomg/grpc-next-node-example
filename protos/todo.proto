@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package todo;
+
+enum TodoStatus {
+  TODO = 0;
+  DONE = 1;
+}
+
+message Todo {
+  required string id = 1;
+  required TodoStatus status = 2;
+  required string description = 3;
+}
+
+service TodoList {
+  rpc getTodos (GetTodosRequest) returns (GetTodosResponse) {}
+  rpc addTodo (AddTodoRequest) returns (DefaultMutationResponse) {}
+  rpc updateTodo (UpdateTodoRequest) returns (DefaultMutationResponse) {}
+  rpc removeTodo (RemoveTodoRequest) returns (DefaultMutationResponse) {}
+}
+
+message GetTodosRequest {}
+
+message GetTodosResponse {
+  repeated Todo data = 1;
+}
+
+message DefaultMutationResponse {
+  required bool success = 1;
+  required string message = 2;
+}
+
+message AddTodoRequest {
+  required string description = 1;
+}
+
+message UpdateTodoRequest {
+  required string todo_id = 1;
+  optional TodoStatus status = 2;
+  optional string description = 3;
+}
+
+message RemoveTodoRequest {
+  required string todo_id = 1;
+}

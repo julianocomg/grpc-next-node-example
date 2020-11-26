@@ -10,7 +10,7 @@ import {
 
 const Service = new TodoListClient('http://localhost:8080');
 
-export async function getTodosQuery(): Promise<GetTodosResponse.AsObject> {
+export function getTodosQuery(): Promise<GetTodosResponse.AsObject> {
   return new Promise((resolve) => {
     const request = new GetTodosRequest();
 
@@ -27,7 +27,7 @@ export async function getTodosQuery(): Promise<GetTodosResponse.AsObject> {
   });
 }
 
-export async function addTodoMutation(
+export function addTodoMutation(
   variables: AddTodoRequest.AsObject
 ): Promise<DefaultMutationResponse.AsObject> {
   return new Promise((resolve) => {
@@ -51,7 +51,7 @@ export async function addTodoMutation(
   });
 }
 
-export async function updateTodoMutation(
+export function updateTodoMutation(
   variables: UpdateTodoRequest.AsObject
 ): Promise<DefaultMutationResponse.AsObject> {
   return new Promise((resolve) => {
@@ -77,7 +77,7 @@ export async function updateTodoMutation(
   });
 }
 
-export async function removeTodoMutation(
+export function removeTodoMutation(
   variables: RemoveTodoRequest.AsObject
 ): Promise<DefaultMutationResponse.AsObject> {
   return new Promise((resolve) => {
